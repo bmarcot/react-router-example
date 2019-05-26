@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
+import Requirements from "./Requirements";
 
 const App: React.FC = () => {
   return (
@@ -28,6 +29,11 @@ const App: React.FC = () => {
                 About
               </Link>
             </li>
+            <li>
+              <Link to={"/requirements"} className="nav-link">
+                Requirements
+              </Link>
+            </li>
           </ul>
         </nav>
         <hr />
@@ -35,6 +41,7 @@ const App: React.FC = () => {
           <Route exact path="/" component={Home} />
           <Route path="/contact" component={Contact} />
           <Route path="/about" component={About} />
+          <Route path="/requirements" component={Requirements} />
         </Switch>
       </div>
     </Router>
