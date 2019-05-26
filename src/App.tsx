@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import Requirements from "./Requirements";
 
@@ -24,8 +24,10 @@ const App: React.FC = () => {
           </ul>
         </nav>
         <hr />
-        <Route exact path="/" component={Home} />
-        <Route path="/requirements" component={Requirements} />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/requirements" component={Requirements} />
+        </Switch>
       </div>
     </Router>
   );
