@@ -2,8 +2,6 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./Home";
-import About from "./About";
-import Contact from "./Contact";
 import Requirements from "./Requirements";
 
 const App: React.FC = () => {
@@ -15,18 +13,7 @@ const App: React.FC = () => {
           <ul className="navbar-nav mr-auto">
             <li>
               <Link to={"/"} className="nav-link">
-                {" "}
-                Home{" "}
-              </Link>
-            </li>
-            <li>
-              <Link to={"/contact"} className="nav-link">
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link to={"/about"} className="nav-link">
-                About
+                Home
               </Link>
             </li>
             <li>
@@ -39,8 +26,6 @@ const App: React.FC = () => {
         <hr />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/about" component={About} />
           <Route path="/requirements" component={Requirements} />
         </Switch>
       </div>
