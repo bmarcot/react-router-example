@@ -1,15 +1,26 @@
 import React, { Component } from "react";
-import { Switch, Route } from "react-router-dom";
-import ListRequirements from "./ListRequirements";
+import { Link, Route } from "react-router-dom";
+import { RouteComponentProps } from "react-router-dom";
 import RequirementDetails from "./RequirementDetails";
 
-class Requirements extends Component {
+class Requirements extends Component<RouteComponentProps, {}> {
   render() {
     return (
-      <Switch>
-        <Route exact path="/requirements" component={ListRequirements} />
-        <Route path="/requirements/:reqId" component={RequirementDetails} />
-      </Switch>
+      <div>
+        <h2>Requirements</h2>
+        <ul>
+          {[1, 2, 3, 4, 5].map(id => (
+            <li key={id}>
+              <Link to={`${this.props.match.url}/${id}`}>{"RQ-" + id}</Link>
+            </li>
+          ))}
+        </ul>
+        <hr />
+        <Route
+          path={`${this.props.match.path}/:reqId`}
+          component={RequirementDetails}
+        />
+      </div>
     );
   }
 }
